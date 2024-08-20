@@ -7,13 +7,16 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20230607\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-20 12:32+0000\n"
-"PO-Revision-Date: 2024-08-20 12:32+0000\n"
-"Last-Translator: \n"
-"Language-Team: \n"
+"PO-Revision-Date: 2024-08-20 12:39+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
+"Language-Team: Spanish <http://weblate.example.com/projects/odin_cybroaddons/"
+"base_accounting_kit/es/>\n"
+"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
-"Plural-Forms: \n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.7\n"
 
 #. module: base_accounting_kit
 #: code:addons/base_accounting_kit/models/account_asset.py:0
@@ -2624,8 +2627,7 @@ msgid ""
 "Print Report with the currency column if the currency differs from the "
 "company currency."
 msgstr ""
-"Imprimir informe con columna moneda si la moneda difiere de la de la "
-"compañía"
+"Imprimir informe con columna moneda si la moneda difiere de la de la compañía"
 
 #. module: base_accounting_kit
 #: model:ir.model,name:base_accounting_kit.model_product_template
@@ -3082,8 +3084,7 @@ msgstr "Este Año"
 #: model_terms:ir.ui.view,arch_db:base_accounting_kit.account_move_form_inherited
 #: model_terms:ir.ui.view,arch_db:base_accounting_kit.header_view
 msgid "This customer's <strong>warning limit</strong> has been crossed."
-msgstr ""
-"Se superó el <strong> límite de advertencia </strong> de este cliente."
+msgstr "Se superó el <strong> límite de advertencia </strong> de este cliente."
 
 #. module: base_accounting_kit
 #: code:addons/base_accounting_kit/models/account_asset.py:0
