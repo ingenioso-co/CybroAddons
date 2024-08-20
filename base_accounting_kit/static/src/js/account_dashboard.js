@@ -1435,7 +1435,7 @@ odoo.define('AccountingDashboard.AccountingDashboard', function (require) {
                             var invoice_this_month = result[0].sum;
                             if (invoice_this_month) {
                                 var total_invoices_this_month = invoice_this_month.toFixed(2)
-                                $('#total_invoices_').append('<span>' + total_invoices_this_month + ' ' + currency + '</span> <div class="title">'+_t('Este mes')+'</div>')
+                                $('#total_invoices_').append('<span>' + total_invoices_this_month + ' ' + currency + '</span> <div class="title">'+_t('This Month')+'</div>')
                             }
                         })
 
@@ -1466,7 +1466,7 @@ odoo.define('AccountingDashboard.AccountingDashboard', function (require) {
                     })
                         .then(function (result) {
                             var unreconciled_counts_ = result[0].count;
-                            $('#unreconciled_items_').append('<span>' + unreconciled_counts_ + ' Item(s)</span><div class="title">'+_t('Este mes')+'</div>')
+                            $('#unreconciled_items_').append('<span>' + unreconciled_counts_ + ' Item(s)</span><div class="title">'+_t('This Month')+'</div>')
                         })
                     rpc.query({
                         model: "account.move",
@@ -1511,12 +1511,12 @@ odoo.define('AccountingDashboard.AccountingDashboard', function (require) {
                             if (incomes_) {
                                 incomes_ = -incomes_;
                                 incomes_ = self.format_currency(currency, incomes_);
-                                $('#total_incomes_').append('<span>' + incomes_ + '</span><div class="title">'+_t('Este mes')+'</div>')
+                                $('#total_incomes_').append('<span>' + incomes_ + '</span><div class="title">'+_t('This Month')+'</div>')
 
                             } else {
                                 incomes_ = -incomes_;
                                 incomes_ = self.format_currency(currency, incomes_);
-                                $('#total_incomes_').append('<span>' + incomes_ + '</span><div class="title">'+_t('Este mes')+'</div>')
+                                $('#total_incomes_').append('<span>' + incomes_ + '</span><div class="title">'+_t('This Month')+'</div>')
                             }
                         })
 
@@ -1551,11 +1551,11 @@ odoo.define('AccountingDashboard.AccountingDashboard', function (require) {
 
                                 var expenses_this_month_ = expense_this_month;
                                 expenses_this_month_ = self.format_currency(currency, expenses_this_month_);
-                                $('#total_expenses_').append('<span>' + expenses_this_month_ + '</span><div class="title">'+_t('Este mes')+'</div>')
+                                $('#total_expenses_').append('<span>' + expenses_this_month_ + '</span><div class="title">'+_t('This Month')+'</div>')
                             } else {
                                 var expenses_this_month_ = expense_this_month;
                                 expenses_this_month_ = self.format_currency(currency, expenses_this_month_);
-                                $('#total_expenses_').append('<span>' + expenses_this_month_ + '</span><div class="title">'+_t('Este mes')+'</div>')
+                                $('#total_expenses_').append('<span>' + expenses_this_month_ + '</span><div class="title">'+_t('This Month')+'</div>')
 
                             }
                         })
@@ -1637,14 +1637,14 @@ odoo.define('AccountingDashboard.AccountingDashboard', function (require) {
                                 net_profit_this_months = self.format_currency(currency, net_profit_this_months);
                                 $('#net_profit_this_months').empty();
                                 $('#net_profit_this_months').append('<div class="title">'+_t('Net Profit/Loss')+' &nbsp;&nbsp;&nbsp;</div><span>' + net_profit_this_months + '</span>')
-                                $('#net_profit_current_months').append('<span>' + net_profit_this_months + '</span> <div class="title">'+_t('Este mes')+'</div>')
+                                $('#net_profit_current_months').append('<span>' + net_profit_this_months + '</span> <div class="title">'+_t('This Month')+'</div>')
 
                             } else {
                                 var net_profit_this_months = profit_this_months;
                                 net_profit_this_months = self.format_currency(currency, net_profit_this_months);
                                 $('#net_profit_this_months').empty();
                                 $('#net_profit_this_months').append('<div class="title">'+_t('Net Profit/Loss')+' &nbsp;&nbsp;&nbsp;</div><span>' + net_profit_this_months + '</span>')
-                                $('#net_profit_current_months').append('<span>' + net_profit_this_months + '</span> <div class="title">'+_t('Este mes')+'</div>')
+                                $('#net_profit_current_months').append('<span>' + net_profit_this_months + '</span> <div class="title">'+_t('This Month')+'</div>')
                             }
                         })
 

@@ -1520,7 +1520,7 @@ msgstr "Etiqueta de entrada"
 #: code:addons/base_accounting_kit/static/src/js/account_dashboard.js:0
 #: code:addons/base_accounting_kit/static/src/js/account_dashboard.js:0
 #, python-format
-msgid "Este mes"
+msgid "This Month"
 msgstr "Este mes"
 
 #. module: base_accounting_kit
