@@ -7,8 +7,8 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20230607\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-08-20 01:13+0000\n"
-"PO-Revision-Date: 2024-08-20 02:13+0000\n"
-"Last-Translator: Weblate Admin <weblate.admin@example.com>\n"
+"PO-Revision-Date: 2024-08-20 02:43+0000\n"
+"Last-Translator: Anonymous <noreply@weblate.org>\n"
 "Language-Team: Spanish <http://weblate.example.com/projects/odin_cybroaddons/"
 "base_accounting_kit/es/>\n"
 "Language: es\n"
@@ -2373,8 +2373,7 @@ msgid ""
 "Print Report with the currency column if the currency differs from the "
 "company currency."
 msgstr ""
-"Imprimir informe con columna moneda si la moneda difiere de la de la "
-"compañía"
+"Imprimir informe con columna moneda si la moneda difiere de la de la compañía"
 
 #. module: base_accounting_kit
 #: model:ir.model,name:base_accounting_kit.model_product_template
@@ -2750,8 +2749,7 @@ msgstr "El monto adeudado por este cliente es"
 #: model_terms:ir.ui.view,arch_db:base_accounting_kit.account_move_form_inherited
 #: model_terms:ir.ui.view,arch_db:base_accounting_kit.header_view
 msgid "This customer's <strong>warning limit</strong> has been crossed."
-msgstr ""
-"Se superó el <strong> límite de advertencia </strong> de este cliente."
+msgstr "Se superó el <strong> límite de advertencia </strong> de este cliente."
 
 #. module: base_accounting_kit
 #: model:ir.model.fields,help:base_accounting_kit.field_cash_flow_report__label_filter
