@@ -1120,6 +1120,7 @@ msgstr "Límite de crédito del cliente"
 #. module: base_accounting_kit
 #. openerp-web
 #: code:addons/base_accounting_kit/static/src/xml/template.xml:0
+#: code:addons/language_translation/base_accounting_kit/static/src/xml/template.xml:0
 #, python-format
 msgid "Customer Invoice"
 msgstr "Factura de cliente"
