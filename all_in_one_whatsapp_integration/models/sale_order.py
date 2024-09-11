@@ -41,18 +41,23 @@ class SaleOrder(models.Model):
                                     'number along with a valid country code!'))
         twilio_whatsapp = (self.env["ir.config_parameter"].sudo().get_param
                            ("all_in_one_whatsapp_integration.twilio_whatsapp"))
-        if not twilio_whatsapp:
+
+        twilio_whatsapp_enabled = (self.env["ir.config_parameter"].sudo().get_param
+                           ("all_in_one_whatsapp_integration.twilio_enabled"))
+        if not twilio_whatsapp and twilio_whatsapp_enabled:
             raise ValidationError(_("Please add your valid twilio"
                                     "whatsapp number in settings"))
         if twilio_whatsapp[0] != "+":
             raise ValidationError(_("Please add a valid "
                                     "twilio mobile number along with +"))
+
         template_id = self.env.ref("all_in_one_whatsapp_integration."
                                    "sale_order_whatsapp_template").id
         mail_template_values = (self.env["mail.template"].
                                 with_context(tpl_partners_only=True).
-                                browse(template_id).generate_email
-                                ([self.id], fields=["body_html"]))
+                                browse(template_id)._generate_template
+                                ([self.id], render_fields=["body_html"]))
+                                
         body_html = dict(mail_template_values)[self.id].pop("body_html", "")
         whatsapp_message = html2text.html2text(body_html)
         report = self.env["ir.actions.report"]._render_qweb_pdf(

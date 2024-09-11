@@ -30,6 +30,20 @@ class SendWhatsappMessage(models.TransientModel):
     _name = 'send.whatsapp.message'
     _description = "Helps to send messages using different way"
 
+    def _get_mode_selection(self):
+        options = [('web', 'WhatsApp Web')]
+        twilio_whatsapp_enabled = (self.env["ir.config_parameter"].sudo().get_param
+                    ("all_in_one_whatsapp_integration.twilio_enabled"))
+        cloud_api_enabled = (self.env["ir.config_parameter"].sudo().get_param
+                    ("all_in_one_whatsapp_integration.cloud_api_enabled"))
+        if(twilio_whatsapp_enabled):
+            options.append(('twilio', 'Twilio'))
+        if(cloud_api_enabled):
+            options.append(('cloud', 'Cloud WhatsApp'))
+
+        return options
+
+
     sale_user_id = fields.Many2one('res.partner',
                                    string="Partner Name",
                                    default=lambda self: self.env[
@@ -45,9 +59,7 @@ class SendWhatsappMessage(models.TransientModel):
     whatsapp_message = fields.Text(string="WhatsApp Message",
                                    help="Enter the message to be sent via "
                                         "WhatsApp.")
-    send_mode = fields.Selection([('twilio', 'Twilio'),
-                                  ('web', 'WhatsApp Web'),
-                                  ('cloud', 'Cloud WhatsApp')],
+    send_mode = fields.Selection(_get_mode_selection,
                                  string="Send Using", default='web',
                                  help="Select the mode to send the WhatsApp"
                                       " message.")
@@ -70,7 +82,7 @@ class SendWhatsappMessage(models.TransientModel):
             self.attachment_ids.ids[0])
         attachment.public = True
         file_link = base_url + ('/web/content/?model=ir.attachment&id='
-                                '446&download=true')
+                + str(self.attachment_ids.ids[0]) + '&download=true')
         number = self.sale_user_id.mobile
         if self.send_mode == 'twilio':
             if " " in number:
@@ -119,8 +131,14 @@ class SendWhatsappMessage(models.TransientModel):
                     var: self.whatsapp_message
                 }
             elif self.message_type == 'document':
+                
+                # payload["text"] = {
+                #     "preview_url": False,
+                #     var: "url pdf: "+file_link
+                # }
                 payload["document"] = {
-                    "link": file_link
+                    "link": file_link,
+                    "caption": "documento pdf"
                 }
             headers = {
                 'Content-Type': 'application/json',

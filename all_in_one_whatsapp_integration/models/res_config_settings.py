@@ -39,6 +39,11 @@ class ResConfigSettings(models.TransientModel):
                                   config_parameter='all_in_one_whatsapp_integration'
                                                    '.twilio_whatsapp',
                                   help="Whatsapp number of twilio account")
+    twilio_whatsapp_enabled = fields.Boolean(string="Twilio whatsapp Enabled",
+                                config_parameter='all_in_one_whatsapp_integration'
+                                                   '.twilio_enabled',
+                                help="Enabled Whatsapp twilio account")
+                                
     bearer_token = fields.Char(string="Whatsapp Access Token",
                                help="Authorization Token of Whatsapp Cloud "
                                     "API",
@@ -52,3 +57,7 @@ class ResConfigSettings(models.TransientModel):
                                     string="Whatsapp Business Account ID",
                                     config_parameter='whatsapp_integration_'
                                                      'odoo.whatsapp_business', )
+    cloud_api_enabled = fields.Boolean(string="Cloud API whatsapp Enabled",
+                                config_parameter='all_in_one_whatsapp_integration'
+                                                   '.cloud_api_enabled',
+                                help="Enabled Whatsapp twilio account")

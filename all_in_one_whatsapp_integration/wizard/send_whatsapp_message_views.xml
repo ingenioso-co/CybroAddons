@@ -16,7 +16,7 @@
                         <field name="whatsapp_mobile_number" nolabel="1"/>
                         <field name="send_mode" widget="radio"/>
                         <field name="message_type" widget="radio"
-                               attrs="{'invisible': [('send_mode','!=','cloud')]}"/>
+                               invisible="send_mode != 'cloud'"/>
                         <field name="attachment_ids"
                                widget='many2many_binary'/>
                     </group>
