@@ -52,8 +52,8 @@ class AccountMove(models.Model):
             'all_in_one_whatsapp_integration.account_move_whatsapp_template').id
         mail_template = self.env['mail.template'].browse(template_id)
         mail_template_values = mail_template.with_context(
-            tpl_partners_only=True).generate_email(
-            [self.id], fields=['body_html'])
+            tpl_partners_only=True)._generate_template(
+            [self.id], render_fields=['body_html'])
         body_html = mail_template_values[self.id].pop('body_html', '')
         whatsapp_message = html2text.html2text(body_html)
         report = self.env['ir.actions.report']._render_qweb_pdf(

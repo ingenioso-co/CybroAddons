@@ -53,7 +53,7 @@ class PurchaseOrder(models.Model):
             self.env["mail.template"]
             .with_context(tpl_partners_only=True)
             .browse(template_id)
-            .generate_email([self.id], fields=["body_html"]))
+            ._generate_template([self.id], render_fields=["body_html"]))
         body_html = dict(mail_template_values)[self.id].pop("body_html", "")
         whatsapp_message = html2text.html2text(body_html)
         report = self.env["ir.actions.report"]._render_qweb_pdf(

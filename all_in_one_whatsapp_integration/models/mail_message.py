@@ -39,9 +39,9 @@ class MailMessage(models.Model):
             'all_in_one_whatsapp_integration.bearer_token')
         whatsapp_no = self.env['ir.config_parameter'].sudo().get_param(
             'all_in_one_whatsapp_integration.whatsapp_no')
-        if bearer_token and whatsapp_no and values_list[0]['model'] == 'mail.channel':
+        if bearer_token and whatsapp_no and values_list[0]['model'] == 'discuss.channel':
             if values_list[0]['email_from']:
-                mail_channel = self.env['mail.channel'].browse(
+                mail_channel = self.env['discuss.channel'].browse(
                     values_list[0]['res_id'])
                 if mail_channel:
                     conn = http.client.HTTPSConnection("graph.facebook.com")

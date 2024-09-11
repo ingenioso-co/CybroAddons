@@ -24,9 +24,9 @@ from odoo import fields, models
 
 
 class MailChannel(models.Model):
-    """This class extends the base 'mail.channel' model in Odoo to include a
+    """This class extends the base 'discuss.channel' model in Odoo to include a
     'phone' field for storing the phone number associated with the
      communication channel."""
-    _inherit = 'mail.channel'
+    _inherit = 'discuss.channel'
 
     phone = fields.Char(string='Phone', help='Phone')

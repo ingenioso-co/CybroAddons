@@ -66,12 +66,12 @@ class Webhook(http.Controller):
                 channel_partner_ids.append(contact.id)
             message_content = \
                 data['entry'][0]['changes'][0]['value']['messages'][0]
-            channel = request.env['mail.channel'].sudo().search([
+            channel = request.env['discuss.channel'].sudo().search([
                 ('phone', '=', profile['wa_id']),
                 ('channel_partner_ids', 'in', channel_partner_ids)
             ])
             if not channel:
-                channel = request.env['mail.channel'].sudo().create({
+                channel = request.env['discuss.channel'].sudo().create({
                     'channel_partner_ids': [(4, contact.id),
                                             (4, to_partner.id)],
                     'channel_type': 'livechat',
@@ -80,7 +80,7 @@ class Webhook(http.Controller):
                     'livechat_operator_id': "3"
                 })
             uuid = channel.uuid
-            mail_channel = request.env["mail.channel"].sudo().search(
+            mail_channel = request.env["discuss.channel"].sudo().search(
                 [('uuid', '=', uuid)], limit=1)
             body = message_content['text']['body']
             x = mail_channel.with_context(

@@ -21,7 +21,7 @@
 ###############################################################################
 {
     'name': "All in one Whatsapp",
-    'version': '16.0.1.0.0',
+    'version': '17.0.1.0.0',
     'category': 'Extra Tools',
     'summary': """Send whatsapp messages to the partner""",
     'description': """ This module helps you to send a whatsapp message to your 
@@ -32,7 +32,7 @@
     'maintainer': 'Cybrosys Techno Solutions',
     'website': "https://www.cybrosys.com",
     'depends': ['base', 'web', 'sale', 'stock', 'purchase', 'account',
-                'contacts', 'website_livechat'],
+                'contacts', ],
     'data': [
         'security/ir.model.access.csv',
         'data/account_move_data.xml',
@@ -49,7 +49,7 @@
         'wizard/send_whatsapp_message_views.xml',
     ],
     'external_dependencies': {
-        'python': ['twilio'],
+        'python': ['twilio','html2text'],
     },
     'images': ['static/description/banner.png'],
     'license': "AGPL-3",
