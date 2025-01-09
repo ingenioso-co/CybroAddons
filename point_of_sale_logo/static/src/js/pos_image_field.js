@@ -4,7 +4,7 @@ odoo.define("point_of_sale_logo.image", function (require) {
     var screens = require('point_of_sale.screens');
     var core = require('web.core');
 
-    var QWeb = core.qweb;
+    /*var QWeb = core.qweb;
     console.log("PosBaseWidget", PosBaseWidget)
     screens.ReceiptScreenWidget.include({
         render_receipt: function () {
@@ -19,7 +19,7 @@ odoo.define("point_of_sale_logo.image", function (require) {
                     paymentlines: order.get_paymentlines(),
                 }));
         },
-    });
+    });*/
     PosBaseWidget.Chrome.include({
         renderElement:function () {
 
