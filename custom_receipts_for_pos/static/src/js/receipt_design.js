@@ -13,12 +13,14 @@ patch(OrderReceipt.prototype, {
         this.pos = useState(useService("pos"));
     },
     get templateProps() {
+
         return {
+            pos:this.pos,
             data: this.props.data,
             order: this.pos.orders,
-            receipt: this.pos.orders[0].export_for_printing(),
-            orderlines:this.pos.orders[0].get_orderlines(),
-            paymentlines:this.pos.orders[0].get_paymentlines()
+            receipt:this.props.data,
+            orderlines:this.props.data.orderlines,
+            paymentlines:this.props.data.paymentlines
         };
     },
     get templateComponent() {

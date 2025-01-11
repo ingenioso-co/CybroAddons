@@ -74,11 +74,6 @@ class PosOrder(models.Model):
             pos_orders = self.search(
                 [("pos_reference", "=", vals["pos_reference"])])
             if pos_orders:
-                for rec in pos_orders.lines:
-                    for lin in vals_list[0]["lines"]:
-                        if lin[2]["product_id"] == rec.product_id.id:
-                            lin[2]["order_status"] = rec.order_status
-                vals_list[0]["order_status"] = pos_orders.order_status
                 return super().create(vals_list)
 
             else:
@@ -103,6 +98,9 @@ class PosOrder(models.Model):
             if not orders:
                 self.create(dic)
             else:
+                orders.floor = dic[0]['floor']
+                orders.hour = dic[0]['hour']
+                orders.minutes = dic[0]['minutes']
                 orders.lines = False
                 orders.lines = dic[0]['lines']
         kitchen_screen = self.env["kitchen.screen"].sudo().search(

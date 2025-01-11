@@ -27,9 +27,11 @@ class StockLot(models.Model):
     _inherit = 'stock.lot'
 
     @api.model
-    def validate_lots(self, lots):
+    def validate_lots(self, lots, pos_config_id):
         """ This method validates a list of lots."""
         processed = []
+        pos_config = self.env['pos.config'].browse(pos_config_id)
+        location_id = pos_config.picking_type_id.default_location_src_id.id
         LotObj = self.env['stock.lot']
         for lot in lots:
             lot_id = LotObj.search([('name', '=', lot)], limit=1)
@@ -38,11 +40,16 @@ class StockLot(models.Model):
             if lot_id.product_qty <= 0:
                 return ['no_stock', lot]
             processed.append(lot)
+            if lot_id.location_id and lot_id.location_id.id != location_id:
+                return ['no_stock', lot]
         return True
 
     @api.model
-    def get_available_lots_qty_pos(self, product_id, lot_name):
+    def get_available_lots_qty_pos(self, product_id, lot_names):
         """Check the max lot quantity of corresponding product."""
         stock_quant = self.env['stock.lot'].search([
-            ('product_id', '=', product_id), ('name', '=', lot_name)])
-        return stock_quant.product_qty
+            ('product_id', '=', product_id),
+            ('name', 'in', lot_names)
+        ])
+        total_quantity = sum(stock_quant.mapped('product_qty'))
+        return total_quantity

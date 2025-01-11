@@ -19,6 +19,8 @@ patch(EditListPopup.prototype, {
     async confirm() {
     /**Checking the lot and serial and raising the error popup**/
         if (this.props.title === 'Lot/Serial Number(s) Required'){
+            var pos_config_id = this.pos.config.id
+            let product_id = this.props.product
             var lot_string = this.state.array
             var lot_names = [];
             for (var i = 0; i < lot_string.length; i++) {
@@ -26,9 +28,11 @@ patch(EditListPopup.prototype, {
                     lot_names.push(lot_string[i].text);
                 }
             }
+            var pos_config_id = this.pos.config.id
             const result = await this.orm.call(
-                "stock.lot", "validate_lots", [lot_names], {}
+                "stock.lot", "validate_lots", [lot_names, pos_config_id], {}
             )
+            const StockStatus = this.pos.get_order()?.get_selected_orderline()?.stock
             if(result != true){
                 if(result[0] == 'no_stock'){
                     this.env.services.popup.add(ErrorPopup, {

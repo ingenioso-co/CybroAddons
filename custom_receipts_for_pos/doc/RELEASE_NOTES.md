@@ -30,3 +30,18 @@
 #### Version 17.0.1.0.5
 ##### BUGFIX
 - Fixed the missing company logo in the pos receipts when printing.
+
+#### 27.09.2024
+#### Version 17.0.2.0.5
+##### BUGFIX
+- Fixed the receipt printing order issue.
+
+#### 07.10.2024
+#### Version 17.0.3.0.5
+##### BUGFIX
+- Fixed the receipt printing blank screen.
+
+#### 07.10.2024
+#### Version 17.0.3.1.5
+##### UPDATE
+- Updated the tracking number to custom receipt screen and fixed the issues when tip is enabled. 
