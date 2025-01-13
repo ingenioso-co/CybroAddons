@@ -283,7 +283,7 @@ var PosDashboard = AbstractAction.extend({
             title: {
               display: true,
               position: "top",
-              text: "SALE DETAILS",
+              text: _t("SALE DETAILS"),
               fontSize: 18,
               fontColor: "#111"
             },
@@ -359,7 +359,7 @@ var PosDashboard = AbstractAction.extend({
             title: {
               display: true,
               position: "top",
-              text: " Top Customer",
+              text: _t("Top Customer"),
               fontSize: 18,
               fontColor: "#111"
             },
@@ -403,7 +403,7 @@ var PosDashboard = AbstractAction.extend({
             labels: arrays[1],
             datasets: [
               {
-                label: "Quantity",
+                label: _t("Quantity"),
                 data: arrays[0],
                 backgroundColor: [
                   "rgba(255, 99, 132,1)",
@@ -431,7 +431,7 @@ var PosDashboard = AbstractAction.extend({
             title: {
               display: true,
               position: "top",
-              text: " Top products",
+              text: _t("Top products"),
               fontSize: 18,
               fontColor: "#111"
             },
@@ -475,7 +475,7 @@ var PosDashboard = AbstractAction.extend({
             labels: arrays[1],
             datasets: [
               {
-                label: "Quantity",
+                label: _t("Quantity"),
                 data: arrays[0],
                 backgroundColor: [
                   "rgba(255, 99, 132,1)",
@@ -504,7 +504,7 @@ var PosDashboard = AbstractAction.extend({
             title: {
               display: true,
               position: "top",
-              text: " Top product categories",
+              text: _t("Top product categories"),
               fontSize: 18,
               fontColor: "#111"
             },

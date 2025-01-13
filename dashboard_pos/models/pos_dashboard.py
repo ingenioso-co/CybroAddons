@@ -20,7 +20,7 @@
 #
 ###################################################################################
 import pytz
-from odoo import models, fields, api
+from odoo import models, fields, api, _
 from datetime import timedelta, datetime, date
 
 
@@ -39,7 +39,7 @@ class PosDashboard(models.Model):
                        AND pos_order.company_id = ''' + str(
                        company_id) + ''' group by date_month '''
             query = query.format(user_tz)
-            label = 'HOURS'
+            label = _('HOURS')
         elif option == 'pos_monthly_sales':
             query = '''select  date_order::date as date_month,sum(amount_total) from pos_order where 
              EXTRACT(month FROM date_order::date) = EXTRACT(month FROM CURRENT_DATE) AND pos_order.company_id = ''' + str(
@@ -98,7 +98,7 @@ class PosDashboard(models.Model):
         sessions_list = []
         dict = {
             'closing_control': 'Closed',
-            'opened': 'Opened',
+            'opened': _('Opened'),
             'new_session': 'New Session',
             'opening_control': "Opening Control"
         }
