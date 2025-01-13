@@ -97,10 +97,10 @@ class PosDashboard(models.Model):
         sessions = self.env['pos.config'].search([])
         sessions_list = []
         dict = {
-            'closing_control': 'Closed',
+            'closing_control': _('Closed'),
             'opened': _('Opened'),
-            'new_session': 'New Session',
-            'opening_control': "Opening Control"
+            'new_session': _('New Session'),
+            'opening_control': _("Opening Control")
         }
         for session in sessions:
             sessions_list.append({
