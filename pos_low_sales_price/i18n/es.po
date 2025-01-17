@@ -7,28 +7,30 @@ msgstr ""
 "Project-Id-Version: Odoo Server 13.0-20230607\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2025-01-17 13:27+0000\n"
-"PO-Revision-Date: 2025-01-17 13:27+0000\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2025-01-17 15:54+0000\n"
+"Last-Translator: Julian Montero <jmontero@ingenioso.co>\n"
+"Language-Team: Spanish <http://weblate.cloud.ingenioso.co/projects/"
+"cybroaddons/pos_low_sales_price/es/>\n"
 "Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: \n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 5.9.2\n"
 
 #. module: pos_low_sales_price
 #. openerp-web
 #: code:addons/pos_low_sales_price/static/src/js/high_cost.js:0
 #, python-format
 msgid "Alert"
-msgstr ""
+msgstr "Alerta"
 
 #. module: pos_low_sales_price
 #. openerp-web
 #: code:addons/pos_low_sales_price/static/src/js/high_cost.js:0
 #, python-format
 msgid "No, Change Price"
-msgstr ""
+msgstr "No, Cambiar precio"
 
 #. module: pos_low_sales_price
 #. openerp-web
@@ -39,17 +41,19 @@ msgid ""
 "The Sales Prices of %s are less than the Cost Price. Do you want to continue"
 " validation?"
 msgstr ""
+"Los Precios de Venta de %s son inferiores al Precio de Coste. ¿Desea "
+"continuar con la validación?"
 
 #. module: pos_low_sales_price
 #. openerp-web
 #: code:addons/pos_low_sales_price/static/src/js/high_cost.js:0
 #, python-format
 msgid "Yes, Continue"
-msgstr ""
+msgstr "Sí, continuar"
 
 #. module: pos_low_sales_price
 #. openerp-web
 #: code:addons/pos_low_sales_price/static/src/js/high_cost.js:0
 #, python-format
 msgid "and %s "
-msgstr ""
+msgstr "y %s "
